@@ -24,10 +24,10 @@ jobs:
       run: node index.js  
 
     - name: Duplicate index.html
-        run: |
-          mkdir dist
-          cp -r ./src ./dist
-          cp ./index.html ./dist
+      run: |
+        mkdir dist
+        cp -r ./src ./dist
+        cp ./index.html ./dist
 
 
     - name: Deploy
