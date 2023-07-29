@@ -25,7 +25,10 @@ jobs:
 
     - name: Duplicate index.html
         run: |
-          cp ./src/ ./index.html
+          mkdir dist
+          cp -r ./src ./dist
+          cp ./index.html ./dist
+
 
     - name: Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v4
