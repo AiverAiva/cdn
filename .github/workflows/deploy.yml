@@ -23,15 +23,13 @@ jobs:
     - name: Generate index.html
       run: node index.js  
 
-    - name: Commit generated files
-      run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-        git add index.html src
-        git commit -m "Update generated files"
+    - name: Duplicate index.html
+        run: |
+          cp ./src/ ./index.html
 
-    - name: Push to deploy branch
-      uses: ad-m/github-push-action@v0.6.0
-      with:
-        github_token: ${{ secrets.ACCESS_TOKEN }}
-        branch: gh-page
+    - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@releases/v4
+        with:
+          # ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }} # Settings > Secret 建立的 ACCESS_TOKEN，推同個 repo 的話可以不需要
+          BRANCH: gh-pages # deploy 到 gh-pages 這個分支
+          FOLDER: dist # build 後的資料夾
