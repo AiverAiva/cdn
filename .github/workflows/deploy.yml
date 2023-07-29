@@ -23,11 +23,11 @@ jobs:
     - name: Generate index.html
       run: node index.js  
 
-    # - name: Duplicate index.html
-    #   run: |
-    #     mkdir dist
-    #     cp -r ./src ./dist
-    #     cp ./index.html ./dist
+    - name: Duplicate index.html
+      run: |
+        mkdir dist
+        cp -r ./src ./dist
+        cp ./index.html ./dist
 
 
     - name: Deploy
@@ -35,4 +35,4 @@ jobs:
       with:
         # ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }} # Settings > Secret 建立的 ACCESS_TOKEN，推同個 repo 的話可以不需要
         BRANCH: gh-pages # deploy 到 gh-pages 這個分支
-        FOLDER: src
+        FOLDER: dist # build 後的資料夾
