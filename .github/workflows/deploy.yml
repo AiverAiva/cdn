@@ -2,9 +2,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main 
-    paths:
-      - 'src/**'  
+      - main  
 
 jobs:
   deploy:
@@ -20,13 +18,20 @@ jobs:
         node-version: 14
 
     - name: Install dependencies
-      run: npm install 
+      run: npm install  
 
     - name: Generate index.html
-      run: node src/index.js
+      run: node index.js  
 
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
+    - name: Commit generated files
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add index.html src
+        git commit -m "Update generated files"
+
+    - name: Push to deploy branch
+      uses: ad-m/github-push-action@v0.6.0
       with:
         github_token: ${{ secrets.ACCESS_TOKEN }}
-        publish_dir: ./
+        branch: gh-page
