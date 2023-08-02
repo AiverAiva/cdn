@@ -1,6 +1,7 @@
 {
     "capes": {
       "aiva_cape": "https://cdn.weikuwu.me/src/capes/aivacape.png",
+      "example_cape": "https://cdn.weikuwu.me/src/capes/example.png",
       "animated_veil_cape": "https://shadyaddons.com/api/capes/gif/veilleux_catgirl_anim"
     },
     "players": {
