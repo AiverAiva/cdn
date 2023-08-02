@@ -2,12 +2,10 @@
     "capes": {
       "aiva_cape": "https://cdn.weikuwu.me/src/capes/aivacape.png",
       "example_cape": "https://cdn.weikuwu.me/src/capes/example.png",
-      "animated_tusi_cape": "https://cdn.weikuwu.me/src/capes/tusicape.gif",
       "animated_veil_cape": "https://shadyaddons.com/api/capes/gif/veilleux_catgirl_anim"
     },
     "players": {
       "365253d5637c86e8e9556eb8656fd1e4ba0327981dd249cee96a88a14a4404af": "aiva_cape",
-      "d9882651680443ee9c1ff6ed0ede8da3a9971f271b497cd700844836a215ccee": "animated_veil_cape",
-      "916d7a46206055d24d652838f60cf202d1164c76ba18821b0fdbc4012d484a5c": "animated_tusi_cape"
+      "d9882651680443ee9c1ff6ed0ede8da3a9971f271b497cd700844836a215ccee": "animated_veil_cape"
     }
 }
