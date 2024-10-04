@@ -13,7 +13,7 @@ function generateFileTree(dir) {
   directories.forEach((file) => {
     const fullPath = path.join(dir, file);
     const relativePath = path.relative(rootDir, fullPath);
-    fileTree += `<li class="cursor-pointer hover:bg-gray-200 p-1"><i class="fas fa-folder mr-2"></i>${file}</li>`;
+    fileTree += `<li class="cursor-pointer hover:bg-gray-400 p-1 text-gray-200"><i class="fas fa-folder mr-2"></i>${file}</li>`;
     fileTree += `<li class="hidden pl-4" data-parent="${file}">${generateFileTree(fullPath)}</li>`;
   });
 
@@ -21,7 +21,7 @@ function generateFileTree(dir) {
     const fullPath = path.join(dir, file);
     const relativePath = path.relative(rootDir, fullPath);
     const fileTypeIcon = fs.statSync(fullPath).isFile() ? (file.match(/.(jpg|jpeg|png|gif)$/i) ? '<i class="fas fa-image mr-2"></i>' : '<i class="fas fa-file mr-2"></i>') : '<i class="fas fa-folder mr-2"></i>';
-    fileTree += `<li class="cursor-pointer hover:bg-gray-200 p-1"><a href="${rootDir + relativePath}" class="text-blue-500 hover:underline">${fileTypeIcon}${file}</a></li>`;
+    fileTree += `<li class="cursor-pointer hover:bg-gray-400 p-1"><a href="${rootDir + relativePath}" class="text-blue-500 hover:underline">${fileTypeIcon}${file}</a></li>`;
   });
 
   fileTree += '</ul>';
@@ -50,8 +50,8 @@ const fileTreeHTML = `
     });
   </script>
 </head>
-<body class="bg-gray-100 font-mono p-4">
-  <h1 class="text-3xl mb-4 font-black">The thing where I share my files! </h1>
+<body class="bg-gray-800 font-mono p-4">
+  <h1 class="text-3xl mb-4 font-black text-white">The thing where I share my files! </h1>
   ${generateFileTree(rootDir)}
 </body>
 </html>
